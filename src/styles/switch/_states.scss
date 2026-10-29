@@ -1,0 +1,92 @@
+/* ==========================================================================
+   MonoUI Kit - Switch Component States (Active, Inactive, Disabled, Loading)
+   Class Prefix: gh-
+   ========================================================================== */
+
+.gh-switch {
+  /* State 1: Inactive / Unchecked (Default grey track + pure white knob on left) */
+  &.gh-switch-unchecked,
+  &:not(.gh-switch-checked) {
+    background-color: #9ca3af; // Matches Row 2 in mockup
+
+    .gh-switch-handle {
+      background-color: #ffffff;
+    }
+
+    &:hover:not(:disabled):not(.gh-switch-disabled) {
+      background-color: #8993a1;
+    }
+
+    &:focus-visible {
+      box-shadow: 0 0 0 3px rgba(156, 163, 175, 0.35);
+    }
+  }
+
+  /* State 2: Active / Checked (Vibrant orange track + pure white knob on right) */
+  &.gh-switch-checked {
+    background-color: #fa8c16; // MonoUI brand orange, matches Row 1 in mockup
+
+    .gh-switch-handle {
+      background-color: #ffffff;
+    }
+
+    &:hover:not(:disabled):not(.gh-switch-disabled) {
+      background-color: #f77f00;
+    }
+
+    &:focus-visible {
+      box-shadow: 0 0 0 3px rgba(250, 140, 22, 0.35);
+    }
+  }
+
+  /* State 3: Disabled State (Matches Row 3 in mockup: light grey track + slate grey knob) */
+  &:disabled,
+  &.gh-switch-disabled {
+    cursor: not-allowed;
+    background-color: #e5e7eb; // Soft light grey track
+
+    .gh-switch-handle {
+      background-color: #8c8c8c; // Darker slate grey knob
+      box-shadow: none;
+    }
+
+    .gh-switch-inner {
+      color: #bfbfbf;
+    }
+
+    &:hover {
+      background-color: #e5e7eb;
+    }
+  }
+
+  /* Loading State */
+  &.gh-switch-loading {
+    cursor: wait;
+    opacity: 0.85;
+
+    .gh-switch-loading-icon {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border: 1.5px solid rgba(0, 0, 0, 0.2);
+      border-top-color: #8c8c8c;
+      border-radius: 50%;
+      animation: gh-switch-spin 0.75s linear infinite;
+    }
+
+    &.gh-switch-small .gh-switch-loading-icon {
+      width: 7px;
+      height: 7px;
+      border-width: 1px;
+    }
+  }
+}
+
+@keyframes gh-switch-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

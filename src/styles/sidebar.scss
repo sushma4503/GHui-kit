@@ -1,0 +1,171 @@
+/* ==========================================================================
+   MonoUI Kit - Sidebar Navigation Styles (SCSS)
+   Matches the exact left menu structure, typography, and active indicator dot
+   All classes use the "gh-" prefix.
+   ========================================================================== */
+
+.gh-monoui-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--sidebar-width);
+  background-color: var(--mono-surface);
+  border-right: 1px solid var(--mono-border);
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  transition: transform 0.25s ease;
+
+  /* Sleek, visible custom scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.18);
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  /* Brand Header */
+  .gh-monoui-brand {
+    padding: 20px 18px 16px 18px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    border-bottom: 1px solid var(--mono-border);
+
+    .gh-monoui-logo-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
+      background-color: #000000;
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: -0.05em;
+    }
+
+    .gh-monoui-logo-text {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--mono-text-primary);
+      letter-spacing: -0.01em;
+    }
+  }
+
+  /* Navigation List */
+  .gh-monoui-sidebar-nav {
+    padding: 16px 10px 40px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .gh-sidebar-category-group {
+      display: flex;
+      flex-direction: column;
+
+      .gh-sidebar-category-header {
+        font-size: 10.5px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #8c8c8c;
+        padding: 0 8px 8px 8px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        &::before {
+          content: '—';
+          color: #bfbfbf;
+          font-weight: 300;
+          margin-right: 2px;
+        }
+
+        &::after {
+          content: '';
+          flex: 1;
+          height: 1px;
+          background-color: var(--mono-border);
+        }
+      }
+
+      .gh-sidebar-category-items {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+      }
+    }
+
+    .gh-sidebar-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 400;
+      color: #262626;
+      text-decoration: none;
+      transition: var(--transition);
+      cursor: pointer;
+      user-select: none;
+
+      &:hover {
+        color: #000000;
+        background-color: #fafafa;
+        text-decoration: none;
+      }
+
+      /* Active State with Orange Indicator Dot */
+      &.gh-active {
+        background-color: #f5f5f5;
+        color: #000000;
+        font-weight: 600;
+
+        .gh-active-indicator-dot {
+          display: inline-block;
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background-color: #fa8c16;
+          box-shadow: 0 0 4px rgba(250, 140, 22, 0.4);
+        }
+      }
+
+      .gh-active-indicator-dot {
+        display: none;
+      }
+    }
+  }
+}
+
+/* Mobile Responsive Drawer Overlay */
+@media (max-width: 992px) {
+  .gh-monoui-sidebar {
+    transform: translateX(-100%);
+
+    &.gh-mobile-open {
+      transform: translateX(0);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+  }
+}

@@ -1,0 +1,14 @@
+/* ==========================================================================
+   MonoUI Kit - Radio Design System Main SCSS Entry
+   Each radio concern has its own separate SCSS file in src/styles/radio/:
+     - radio/_base.scss     (Base radio button structure, group, and button pill)
+     - radio/_sizes.scss    (Large, Default/Medium, Small size modifiers)
+     - radio/_states.scss   (Checked amber, Unchecked grey, and Disabled states)
+     - radio/_matrix.scss   (Showcase matrix layout, playground, cards, and specs)
+   All classes use the "gh-" prefix.
+   ========================================================================== */
+
+@use 'radio/base';
+@use 'radio/sizes';
+@use 'radio/states';
+@use 'radio/matrix';

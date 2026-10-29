@@ -1,0 +1,95 @@
+/* ==========================================================================
+   MonoUI Kit - Alert Component Base SCSS
+   Concern: Base container, typography, close action, flex layout
+   All classes use the "gh-" prefix.
+   ========================================================================== */
+
+.gh-alert {
+  position: relative;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px 16px;
+  font-size: 14px;
+  line-height: 1.5714;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  word-break: break-word;
+  transition: opacity 0.25s cubic-bezier(0.2, 0, 0, 1),
+              transform 0.25s cubic-bezier(0.2, 0, 0, 1),
+              max-height 0.3s cubic-bezier(0.2, 0, 0, 1),
+              margin 0.3s ease;
+  overflow: hidden;
+
+  /* Compact banner text */
+  .gh-alert-text {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 400;
+    color: #1f1f1f;
+    line-height: 1.5;
+  }
+
+  /* Inline Icon on the left */
+  .gh-alert-icon-left {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    flex-shrink: 0;
+    line-height: 1;
+
+    svg {
+      width: 16px;
+      height: 16px;
+      display: block;
+    }
+  }
+
+  /* Close Button on the right */
+  .gh-alert-close-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin-left: 12px;
+    color: rgba(0, 0, 0, 0.45);
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.15s ease, transform 0.15s ease;
+    flex-shrink: 0;
+
+    &:hover {
+      color: rgba(0, 0, 0, 0.85);
+      transform: scale(1.1);
+    }
+
+    &:focus-visible {
+      outline: 2px solid #fa8c16;
+      border-radius: 2px;
+    }
+
+    svg {
+      width: 12px;
+      height: 12px;
+      display: block;
+    }
+  }
+
+  /* Dismissed fade-out state */
+  &.gh-alert-dismissed {
+    opacity: 0;
+    transform: scale(0.96);
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-width: 0;
+    pointer-events: none;
+  }
+}

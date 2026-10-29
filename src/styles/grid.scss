@@ -1,0 +1,282 @@
+/* ==========================================================================
+   MonoUI Kit - Grid & Responsive Columns Design System Specifications (SCSS)
+   Matches the 12-column desktop and 4-column mobile specification sheet
+   All classes use the "gh-" prefix.
+   ========================================================================== */
+
+.gh-grid-spec-page {
+  max-width: 980px;
+  width: 100%;
+  margin: 0 auto;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #111827;
+
+  /* Header Section */
+  .gh-spec-header-breadcrumbs {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #8c8c8c;
+    margin-bottom: 12px;
+  }
+
+  .gh-grid-main-title {
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #111827;
+    margin: 0 0 36px 0;
+    line-height: 1.15;
+  }
+
+  /* ==========================================================================
+     1. Desktop Grid (1440px Canvas)
+     ========================================================================== */
+  .gh-grid-section-block {
+    margin-bottom: 48px;
+
+    .gh-grid-block-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 8px;
+
+      .gh-grid-block-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: #111827;
+        margin: 0;
+      }
+
+      .gh-grid-block-meta {
+        font-size: 12px;
+        font-weight: 400;
+        color: #6b7280;
+        margin: 0;
+      }
+    }
+
+    .gh-desktop-grid-canvas {
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 24px;
+      overflow-x: auto;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+
+      .gh-columns-12-wrapper {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 20px;
+        min-width: 680px;
+
+        .gh-grid-column-cell {
+          height: 60px;
+          background-color: #e2e8f0;
+          border-radius: 6px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 11.5px;
+          font-weight: 600;
+          color: #64748b;
+          transition: all 0.15s ease;
+          user-select: none;
+
+          &:hover {
+            background-color: #cbd5e1;
+            color: #1e293b;
+            transform: translateY(-1px);
+          }
+        }
+      }
+    }
+  }
+
+  /* ==========================================================================
+     2. Mobile Grid (375px Representation)
+     ========================================================================== */
+  .gh-mobile-grid-section-block {
+    margin-bottom: 56px;
+
+    .gh-mobile-block-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+
+      .gh-mobile-block-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: #111827;
+        margin: 0;
+      }
+
+      .gh-mobile-block-meta {
+        font-size: 12px;
+        font-weight: 400;
+        color: #6b7280;
+        margin: 0;
+      }
+    }
+
+    .gh-mobile-device-canvas {
+      width: 375px;
+      max-width: 100%;
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 20px 16px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+
+      .gh-columns-4-wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+
+        .gh-mobile-column-cell {
+          height: 60px;
+          background-color: #cbd5e1;
+          border-radius: 6px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 11.5px;
+          font-weight: 600;
+          color: #475569;
+          transition: all 0.15s ease;
+          user-select: none;
+
+          &:hover {
+            background-color: #94a3b8;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+
+  /* ==========================================================================
+     3. Column Spanning Layouts Demonstration
+     ========================================================================== */
+  .gh-spanning-examples-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 32px;
+    margin-bottom: 48px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+
+    .gh-spanning-card-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #111827;
+      margin: 0 0 6px 0;
+    }
+
+    .gh-spanning-card-desc {
+      font-size: 13px;
+      color: #6b7280;
+      margin: 0 0 24px 0;
+    }
+
+    .gh-spanning-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      .gh-span-row {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 16px;
+
+        .gh-span-pill {
+          background-color: #eff6ff;
+          border: 1px solid #bfdbfe;
+          color: #1d4ed8;
+          padding: 10px 12px;
+          border-radius: 6px;
+          font-size: 11.5px;
+          font-weight: 600;
+          text-align: center;
+          transition: all 0.15s ease;
+
+          &:hover {
+            background-color: #dbeafe;
+          }
+
+          &.gh-col-12 { grid-column: span 12; }
+          &.gh-col-6 { grid-column: span 6; }
+          &.gh-col-4 { grid-column: span 4; }
+          &.gh-col-8 { grid-column: span 8; }
+          &.gh-col-3 { grid-column: span 3; }
+        }
+      }
+    }
+  }
+
+  /* ==========================================================================
+     4. Responsive Breakpoints Reference Table
+     ========================================================================== */
+  .gh-grid-reference-section {
+    margin-top: 48px;
+
+    .gh-reference-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #111827;
+      margin: 0 0 16px 0;
+    }
+
+    .gh-reference-table-wrapper {
+      overflow-x: auto;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+        text-align: left;
+
+        th {
+          background-color: #f9fafb;
+          color: #6b7280;
+          font-weight: 600;
+          padding: 12px 16px;
+          border-bottom: 1px solid #e5e7eb;
+          text-transform: uppercase;
+          font-size: 11px;
+          letter-spacing: 0.05em;
+        }
+
+        td {
+          padding: 12px 16px;
+          border-bottom: 1px solid #f3f4f6;
+          color: #374151;
+
+          code {
+            font-family: 'JetBrains Mono', Consolas, monospace;
+            font-size: 12px;
+            background-color: #f3f4f6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #1f2937;
+          }
+        }
+
+        tr:last-child td {
+          border-bottom: none;
+        }
+
+        tr:hover td {
+          background-color: #fafafa;
+        }
+      }
+    }
+  }
+}

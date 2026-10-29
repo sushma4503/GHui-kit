@@ -1,0 +1,14 @@
+/* ==========================================================================
+   MonoUI Kit - Typography Design System Main SCSS Entry
+   Each typography component has its own separate SCSS file in src/styles/typography/:
+     - typography/_headings.scss     (H1-H5 scale)
+     - typography/_body.scss         (Body colors, link, strong, code, etc.)
+     - typography/_foundational.scss (Foundational type scale)
+     - typography/_matrix.scss       (Layout grid & container)
+   All classes use the "gh-" prefix.
+   ========================================================================== */
+
+@use 'typography/headings';
+@use 'typography/body';
+@use 'typography/foundational';
+@use 'typography/matrix';

@@ -1,0 +1,67 @@
+/* ==========================================================================
+   MonoUI Kit - Switch Component Sizes
+   Class Prefix: gh-
+   ========================================================================== */
+
+.gh-switch {
+  /* Default / Large Switch (Matches left column in mockup: 44x24, thumb 20x20) */
+  &.gh-switch-large,
+  &.gh-switch-default,
+  &:not(.gh-switch-small) {
+    min-width: 44px;
+    height: 24px;
+    line-height: 24px;
+
+    .gh-switch-handle {
+      width: 20px;
+      height: 20px;
+      top: 2px;
+      left: 2px;
+    }
+
+    &.gh-switch-checked .gh-switch-handle {
+      left: calc(100% - 22px);
+    }
+
+    .gh-switch-inner {
+      font-size: 11px;
+      margin-left: 24px;
+      margin-right: 7px;
+    }
+
+    &.gh-switch-checked .gh-switch-inner {
+      margin-left: 7px;
+      margin-right: 24px;
+    }
+  }
+
+  /* Small Switch (Matches right column in mockup: 28x16, thumb 12x12) */
+  &.gh-switch-small {
+    min-width: 28px;
+    height: 16px;
+    line-height: 16px;
+
+    .gh-switch-handle {
+      width: 12px;
+      height: 12px;
+      top: 2px;
+      left: 2px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    &.gh-switch-checked .gh-switch-handle {
+      left: calc(100% - 14px);
+    }
+
+    .gh-switch-inner {
+      font-size: 9px;
+      margin-left: 15px;
+      margin-right: 4px;
+    }
+
+    &.gh-switch-checked .gh-switch-inner {
+      margin-left: 4px;
+      margin-right: 15px;
+    }
+  }
+}

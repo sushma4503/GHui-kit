@@ -1,0 +1,69 @@
+/* ==========================================================================
+   MonoUI Kit - Alert Variants SCSS
+   Concern: Semantic status colors (Success, Info, Warning, Error)
+   All classes use the "gh-" prefix.
+   ========================================================================== */
+
+/* 1. SUCCESS VARIANT */
+.gh-alert-success {
+  background-color: #f6ffed;
+  border-color: #b7eb8f;
+
+  .gh-alert-icon-left svg,
+  .gh-alert-large-icon-wrapper svg {
+    color: #52c41a;
+    fill: currentColor;
+  }
+
+  .gh-alert-large-icon-wrapper svg path.stroke-elem {
+    stroke: #52c41a;
+  }
+}
+
+/* 2. INFO VARIANT */
+.gh-alert-info {
+  background-color: #e6f7ff;
+  border-color: #91d5ff;
+
+  .gh-alert-icon-left svg,
+  .gh-alert-large-icon-wrapper svg {
+    color: #1890ff;
+    fill: currentColor;
+  }
+
+  .gh-alert-large-icon-wrapper svg path.stroke-elem {
+    stroke: #1890ff;
+  }
+}
+
+/* 3. WARNING VARIANT */
+.gh-alert-warning {
+  background-color: #fffbe6;
+  border-color: #ffe58f;
+
+  .gh-alert-icon-left svg,
+  .gh-alert-large-icon-wrapper svg {
+    color: #faad14;
+    fill: currentColor;
+  }
+
+  .gh-alert-large-icon-wrapper svg path.stroke-elem {
+    stroke: #faad14;
+  }
+}
+
+/* 4. ERROR VARIANT */
+.gh-alert-error {
+  background-color: #fff1f0;
+  border-color: #ffccc7;
+
+  .gh-alert-icon-left svg,
+  .gh-alert-large-icon-wrapper svg {
+    color: #ff4d4f;
+    fill: currentColor;
+  }
+
+  .gh-alert-large-icon-wrapper svg path.stroke-elem {
+    stroke: #ff4d4f;
+  }
+}

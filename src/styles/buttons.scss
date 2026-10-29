@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Button Design System - Main SCSS Entry
+   Each button type has its own separate SCSS file in src/styles/buttons/:
+     - buttons/_base.scss      (Base button reset & sizes: gh-btn-large/medium/small)
+     - buttons/_primary.scss   (Primary button: gh-btn-primary)
+     - buttons/_secondary.scss (Secondary button: gh-btn-secondary)
+     - buttons/_tertiary.scss  (Tertiary button: gh-btn-tertiary)
+     - buttons/_link.scss      (Link button: gh-btn-link)
+     - buttons/_semantic.scss  (Error, Success, Warning: gh-btn-error/success/warning)
+     - buttons/_icon.scss      (Square icon buttons: gh-btn-icon)
+     - buttons/_matrix.scss    (Matrix page layout & grid)
+   All classes use the "gh-" prefix.
+   ========================================================================== */
+
+@use 'buttons/base';
+@use 'buttons/primary';
+@use 'buttons/secondary';
+@use 'buttons/tertiary';
+@use 'buttons/link';
+@use 'buttons/semantic';
+@use 'buttons/icon';
+@use 'buttons/matrix';

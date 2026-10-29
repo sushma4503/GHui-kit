@@ -1,0 +1,38 @@
+/* ==========================================================================
+   Base Button Reset & Size Modifiers
+   Class Prefix: gh-
+   ========================================================================== */
+
+.gh-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-weight: 500;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  user-select: none;
+  transition: all 0.15s ease;
+  cursor: pointer;
+  white-space: nowrap;
+  box-sizing: border-box;
+
+  /* Size Variations */
+  &.gh-btn-large {
+    height: 38px;
+    padding: 0 16px;
+    font-size: 13px;
+  }
+
+  &.gh-btn-medium {
+    height: 32px;
+    padding: 0 12px;
+    font-size: 12px;
+  }
+
+  &.gh-btn-small {
+    height: 28px;
+    padding: 0 10px;
+    font-size: 11px;
+  }
+}

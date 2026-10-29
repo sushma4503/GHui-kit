@@ -1,0 +1,206 @@
+/* ==========================================================================
+   MonoUI Kit - Carousel Component Styles (SCSS)
+   Matches the brutalist architecture slideshow, controls, and indicators
+   All classes use the "gh-" prefix.
+   ========================================================================== */
+
+.gh-carousel-preview-container {
+  margin-top: 24px;
+  margin-bottom: 40px;
+
+  /* Outer Grey Framed Canvas */
+  .gh-carousel-viewport-frame {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    background-color: #636363;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+
+    @media (max-width: 640px) {
+      height: 300px;
+    }
+  }
+
+  /* Slide Content Area */
+  .gh-carousel-slide-item {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 32px 36px;
+    background-size: cover;
+    background-position: center;
+
+    &.gh-active {
+      opacity: 1;
+      z-index: 2;
+    }
+
+    /* Subtle Vignette Gradient for Readability */
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.82) 0%,
+        rgba(0, 0, 0, 0.45) 50%,
+        rgba(0, 0, 0, 0.2) 100%
+      );
+      z-index: 1;
+    }
+
+    .gh-slide-content-overlay {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+
+      .gh-slide-tag-badge {
+        display: inline-block;
+        background-color: #fadb14;
+        color: #000000;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        padding: 3px 8px;
+        border-radius: 3px;
+        margin-bottom: 10px;
+      }
+
+      .gh-slide-title-text {
+        font-size: 24px;
+        font-weight: 800;
+        color: #ffffff;
+        letter-spacing: -0.02em;
+        line-height: 1.25;
+        margin: 0 0 6px 0;
+
+        @media (max-width: 640px) {
+          font-size: 19px;
+        }
+      }
+
+      .gh-slide-desc-text {
+        font-size: 13px;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.85);
+        margin: 0;
+
+        @media (max-width: 640px) {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  /* Navigation Arrow Buttons */
+  .gh-carousel-arrow-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+    transition: var(--transition);
+    cursor: pointer;
+
+    &:hover {
+      background-color: #f5f5f5;
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    &.gh-prev {
+      left: 20px;
+    }
+
+    &.gh-next {
+      right: 20px;
+    }
+
+    @media (max-width: 640px) {
+      width: 32px;
+      height: 32px;
+
+      &.gh-prev {
+        left: 12px;
+      }
+
+      &.gh-next {
+        right: 12px;
+      }
+    }
+  }
+
+  /* Slide Dots / Dash Indicators */
+  .gh-carousel-indicators-bar {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 10;
+
+    .gh-indicator-dash {
+      width: 24px;
+      height: 3px;
+      border-radius: 2px;
+      background-color: rgba(255, 255, 255, 0.4);
+      transition: var(--transition);
+      cursor: pointer;
+
+      &.gh-active {
+        background-color: #ffffff;
+        width: 32px;
+      }
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+      }
+    }
+  }
+
+  /* Bottom Telemetry Status Bar */
+  .gh-carousel-status-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 14px;
+    font-size: 12.5px;
+    color: var(--mono-text-muted);
+
+    .gh-status-info {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .gh-status-action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: var(--mono-text-secondary);
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+
+      &:hover {
+        color: var(--mono-text-primary);
+      }
+    }
+  }
+}

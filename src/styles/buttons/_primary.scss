@@ -1,0 +1,32 @@
+/* ==========================================================================
+   Primary Button - Separate SCSS Code
+   Class Prefix: gh-
+   ========================================================================== */
+
+.gh-btn.gh-btn-primary {
+  background-color: #ffaa23;
+  border-color: #ffaa23;
+  color: #ffffff;
+
+  &:hover,
+  &.gh-state-hover {
+    background-color: #ffbb4f;
+    border-color: #ffbb4f;
+    box-shadow: 0 2px 5px rgba(255, 170, 35, 0.28);
+  }
+
+  &:active,
+  &.gh-state-active {
+    background-color: #ffaa23;
+    border-color: #ffaa23;
+  }
+
+  &:disabled,
+  &.gh-state-disabled {
+    background-color: #f2f2f2;
+    border-color: #f2f2f2;
+    color: #bfbfbf;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+}

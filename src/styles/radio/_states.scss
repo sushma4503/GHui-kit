@@ -1,0 +1,48 @@
+/* ==========================================================================
+   MonoUI Kit - Radio Component States (Active/Checked, Default, Disabled)
+   Class Prefix: gh-
+   ========================================================================== */
+
+/* Active / Checked State */
+.gh-radio-checked {
+  .gh-radio-inner {
+    border-color: #fa8c16;
+    background-color: #ffffff;
+
+    &::after {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+      background-color: #fa8c16; // MonoUI brand orange
+    }
+  }
+
+  &:hover:not(.gh-radio-disabled) .gh-radio-inner {
+    border-color: #f77f00;
+  }
+}
+
+/* Disabled State */
+.gh-radio-disabled {
+  cursor: not-allowed;
+
+  .gh-radio-inner {
+    background-color: #f3f4f6;
+    border-color: #d1d5db;
+
+    &::after {
+      background-color: #9ca3af;
+    }
+  }
+
+  &.gh-radio-checked .gh-radio-inner {
+    border-color: #d1d5db;
+
+    &::after {
+      background-color: #9ca3af;
+    }
+  }
+
+  &:hover .gh-radio-inner {
+    border-color: #d1d5db;
+  }
+}

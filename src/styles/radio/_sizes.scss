@@ -1,0 +1,72 @@
+/* ==========================================================================
+   MonoUI Kit - Radio Component Sizes
+   Class Prefix: gh-
+   ========================================================================== */
+
+/* Large Radio (20px outer / 10px dot) */
+.gh-radio-large {
+  .gh-radio-inner {
+    width: 20px;
+    height: 20px;
+
+    &::after {
+      width: 10px;
+      height: 10px;
+    }
+  }
+}
+.gh-radio-wrapper-large {
+  font-size: 14.5px;
+}
+
+/* Default / Medium Radio (16px outer / 8px dot) */
+.gh-radio-default,
+.gh-radio-medium,
+.gh-radio:not(.gh-radio-large):not(.gh-radio-small) {
+  .gh-radio-inner {
+    width: 16px;
+    height: 16px;
+
+    &::after {
+      width: 8px;
+      height: 8px;
+    }
+  }
+}
+.gh-radio-wrapper-default,
+.gh-radio-wrapper-medium {
+  font-size: 13.5px;
+}
+
+/* Small Radio (14px outer / 6px dot) */
+.gh-radio-small {
+  .gh-radio-inner {
+    width: 14px;
+    height: 14px;
+
+    &::after {
+      width: 6px;
+      height: 6px;
+    }
+  }
+}
+.gh-radio-wrapper-small {
+  font-size: 12px;
+}
+
+/* Radio Button Size Variations */
+.gh-radio-button-wrapper {
+  &.gh-radio-button-large {
+    height: 38px;
+    line-height: 36px;
+    padding: 0 20px;
+    font-size: 14px;
+  }
+
+  &.gh-radio-button-small {
+    height: 26px;
+    line-height: 24px;
+    padding: 0 10px;
+    font-size: 12px;
+  }
+}

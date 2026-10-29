@@ -1,0 +1,14 @@
+/* ==========================================================================
+   MonoUI Kit - Switch Design System Main SCSS Entry
+   Each switch concern has its own separate SCSS file in src/styles/switch/:
+     - switch/_base.scss     (Base toggle switch reset, layout, and structure)
+     - switch/_sizes.scss    (Large 44px and Small 28px size modifiers)
+     - switch/_states.scss   (Active amber, Unchecked grey, and Disabled states)
+     - switch/_matrix.scss   (Showcase matrix layout, playground, and anatomy)
+   All classes use the "gh-" prefix.
+   ========================================================================== */
+
+@use 'switch/base';
+@use 'switch/sizes';
+@use 'switch/states';
+@use 'switch/matrix';

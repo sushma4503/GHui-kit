@@ -1,0 +1,16 @@
+/* ==========================================================================
+   MonoUI Kit - Alert & Message Design System Main SCSS Entry
+   Each alert concern has its own separate SCSS file in src/styles/alert/:
+     - alert/_base.scss     (Base alert container, flex alignment, close button)
+     - alert/_variants.scss (Success, Info, Warning, Error semantic palettes)
+     - alert/_banner.scss   (Detailed title + description, large icon cards)
+     - alert/_message.scss  (Toast / notification pills with soft drop shadows)
+     - alert/_matrix.scss   (Showcase matrix layout matching the design screenshot)
+   All classes use the "gh-" prefix.
+   ========================================================================== */
+
+@use 'alert/base';
+@use 'alert/variants';
+@use 'alert/banner';
+@use 'alert/message';
+@use 'alert/matrix';

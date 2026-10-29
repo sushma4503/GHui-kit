@@ -1,0 +1,34 @@
+/* ==========================================================================
+   Secondary Button - Separate SCSS Code
+   Class Prefix: gh-
+   ========================================================================== */
+
+.gh-btn.gh-btn-secondary {
+  background-color: #ffffff;
+  border: 1px solid #ffaa23;
+  color: #ffaa23;
+
+  &:hover,
+  &.gh-state-hover {
+    background-color: #fffaf0;
+    border-color: #ffaa23;
+    color: #ff9800;
+    box-shadow: 0 2px 4px rgba(255, 170, 35, 0.15);
+  }
+
+  &:active,
+  &.gh-state-active {
+    background-color: #ffffff;
+    color: #ffaa23;
+    border-color: #ffaa23;
+  }
+
+  &:disabled,
+  &.gh-state-disabled {
+    background-color: #ffffff;
+    border-color: #e0e0e0;
+    color: #bfbfbf;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+}

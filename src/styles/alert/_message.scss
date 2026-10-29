@@ -1,0 +1,126 @@
+/* ==========================================================================
+   MonoUI Kit - Floating Message / Toast Pills SCSS
+   Concern: Standalone toast pills, soft drop shadows, status icons, spinner
+   All classes use the "gh-" prefix.
+   ========================================================================== */
+
+/* Message / Toast Pill Grid Layout */
+.gh-message-pills-matrix {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 18px;
+  align-items: start;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Standalone Toast Card / Pill */
+.gh-message-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
+  color: #262626;
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.4;
+  user-select: none;
+  box-sizing: border-box;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12), 0 2px 5px rgba(0, 0, 0, 0.06);
+    transform: translateY(-1px);
+  }
+
+  .gh-message-text {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Status Icons */
+  .gh-message-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    flex-shrink: 0;
+
+    svg {
+      width: 16px;
+      height: 16px;
+      display: block;
+    }
+
+    &.gh-msg-info svg {
+      color: #1890ff;
+      fill: currentColor;
+    }
+
+    &.gh-msg-warning svg {
+      color: #faad14;
+      fill: currentColor;
+    }
+
+    &.gh-msg-success svg {
+      color: #52c41a;
+      fill: currentColor;
+    }
+
+    &.gh-msg-error svg {
+      color: #ff4d4f;
+      fill: currentColor;
+    }
+
+    &.gh-msg-loading svg {
+      color: #1890ff;
+      animation: gh-spin 1s linear infinite;
+    }
+  }
+}
+
+/* Spinner Keyframes */
+@keyframes gh-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Interactive Floating Toast Toast Notification Container */
+.gh-floating-toast-container {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+
+  .gh-floating-toast-item {
+    pointer-events: auto;
+    animation: gh-toast-in 0.3s cubic-bezier(0.2, 0, 0, 1) forwards;
+  }
+}
+
+@keyframes gh-toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

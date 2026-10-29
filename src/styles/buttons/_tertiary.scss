@@ -1,0 +1,34 @@
+/* ==========================================================================
+   Tertiary Button - Separate SCSS Code
+   Class Prefix: gh-
+   ========================================================================== */
+
+.gh-btn.gh-btn-tertiary {
+  background-color: #ffffff;
+  border: 1px solid #d9d9d9;
+  color: #262626;
+
+  &:hover,
+  &.gh-state-hover {
+    background-color: #fafafa;
+    border-color: #bfbfbf;
+    color: #1f1f1f;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  }
+
+  &:active,
+  &.gh-state-active {
+    background-color: #ffffff;
+    border-color: #d9d9d9;
+    color: #262626;
+  }
+
+  &:disabled,
+  &.gh-state-disabled {
+    background-color: #ffffff;
+    border-color: #e0e0e0;
+    color: #bfbfbf;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+}

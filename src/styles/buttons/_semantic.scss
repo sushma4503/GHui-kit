@@ -1,0 +1,77 @@
+/* ==========================================================================
+   Semantic Status Buttons - Separate SCSS Code
+   (Error, Success, Warning)
+   Class Prefix: gh-
+   ========================================================================== */
+
+/* Error (Red) */
+.gh-btn.gh-btn-error {
+  background-color: #ff4d4f;
+  border-color: #ff4d4f;
+  color: #ffffff;
+
+  &:hover,
+  &.gh-state-hover {
+    background-color: #ff7875;
+    border-color: #ff7875;
+  }
+}
+
+.gh-btn.gh-btn-error-outline {
+  background-color: #ffffff;
+  border: 1px solid #ff4d4f;
+  color: #ff4d4f;
+
+  &:hover,
+  &.gh-state-hover {
+    background-color: #fff1f0;
+  }
+}
+
+/* Success (Green) */
+.gh-btn.gh-btn-success {
+  background-color: #52c41a;
+  border-color: #52c41a;
+  color: #ffffff;
+
+  &:hover,
+  &.gh-state-hover {
+    background-color: #73d13d;
+    border-color: #73d13d;
+  }
+}
+
+.gh-btn.gh-btn-success-outline {
+  background-color: #ffffff;
+  border: 1px solid #52c41a;
+  color: #52c41a;
+
+  &:hover,
+  &.gh-state-hover {
+    background-color: #f6ffed;
+  }
+}
+
+/* Warning (Amber) */
+.gh-btn.gh-btn-warning {
+  background-color: #ffaa23;
+  border-color: #ffaa23;
+  color: #ffffff;
+
+  &:hover,
+  &.gh-state-hover {
+    background-color: #ffbb4f;
+    border-color: #ffbb4f;
+  }
+}
+
+.gh-btn.gh-btn-warning-outline {
+  background-color: #ffffff;
+  border: 1px solid #ffaa23;
+  color: #ffaa23;
+
+  &:hover,
+  &.gh-state-hover {
+    background-color: #fffaf0;
+  }
+}

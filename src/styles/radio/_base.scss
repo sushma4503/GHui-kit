@@ -1,0 +1,189 @@
+/* ==========================================================================
+   MonoUI Kit - Radio Component Base Structure
+   Class Prefix: gh-
+   ========================================================================== */
+
+.gh-radio-wrapper {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  font-family: inherit;
+  color: #1f2937;
+  font-size: 13.5px;
+  line-height: 1.5;
+  margin-right: 18px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &.gh-radio-wrapper-disabled {
+    cursor: not-allowed;
+    color: #9ca3af;
+  }
+
+  .gh-radio-label {
+    padding-left: 8px;
+    padding-right: 4px;
+    line-height: 1.4;
+  }
+}
+
+.gh-radio {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  vertical-align: middle;
+  outline: none;
+
+  .gh-radio-input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  /* Outer circular ring */
+  .gh-radio-inner {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    box-sizing: border-box;
+    transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+
+    /* Centered inner circle dot */
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      border-radius: 50%;
+      background-color: #fa8c16;
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0;
+      transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+    }
+  }
+
+  &:hover:not(.gh-radio-disabled) .gh-radio-inner {
+    border-color: #fa8c16;
+  }
+
+  &:focus-visible .gh-radio-inner,
+  .gh-radio-input:focus-visible + .gh-radio-inner {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(250, 140, 22, 0.28);
+  }
+}
+
+/* Radio Group */
+.gh-radio-group {
+  display: inline-flex;
+  font-family: inherit;
+  box-sizing: border-box;
+
+  &.gh-radio-group-horizontal {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &.gh-radio-group-vertical {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+
+    .gh-radio-wrapper {
+      margin-right: 0;
+    }
+  }
+}
+
+/* Radio Button variant (Segmented Pill) */
+.gh-radio-button-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0 16px;
+  height: 32px;
+  line-height: 30px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-left-width: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+
+  &:first-child {
+    border-left-width: 1px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+
+  &:last-child {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+
+  &:hover:not(.gh-radio-button-disabled) {
+    color: #fa8c16;
+    border-color: #fa8c16;
+    z-index: 1;
+  }
+
+  &.gh-radio-button-checked {
+    z-index: 2;
+    color: #fa8c16;
+    background-color: #fff7e6;
+    border-color: #fa8c16;
+    font-weight: 600;
+
+    &.gh-radio-button-solid {
+      background-color: #fa8c16;
+      color: #ffffff;
+      border-color: #fa8c16;
+    }
+  }
+
+  &.gh-radio-button-disabled {
+    cursor: not-allowed;
+    color: #9ca3af;
+    background-color: #f3f4f6;
+    border-color: #e5e7eb;
+  }
+
+  .gh-radio-button-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+}

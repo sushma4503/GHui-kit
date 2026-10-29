@@ -1,0 +1,27 @@
+/* ==========================================================================
+   Square Icon Buttons - Separate SCSS Code
+   Class Prefix: gh-
+   ========================================================================== */
+
+.gh-btn.gh-btn-icon {
+  padding: 0;
+
+  &.gh-btn-large {
+    width: 38px;
+    height: 38px;
+  }
+
+  &.gh-btn-medium {
+    width: 32px;
+    height: 32px;
+  }
+
+  &.gh-btn-small {
+    width: 28px;
+    height: 28px;
+  }
+
+  &.gh-btn-tertiary {
+    color: #595959;
+  }
+}

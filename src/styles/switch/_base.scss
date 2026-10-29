@@ -1,0 +1,62 @@
+/* ==========================================================================
+   MonoUI Kit - Switch Component Base Structure
+   Class Prefix: gh-
+   ========================================================================== */
+
+.gh-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  box-sizing: border-box;
+  padding: 0;
+  border: 0;
+  border-radius: 9999px;
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+  outline: none;
+  font-family: inherit;
+  transition: background-color 0.25s cubic-bezier(0.2, 0, 0, 1),
+              box-shadow 0.25s cubic-bezier(0.2, 0, 0, 1),
+              border-color 0.25s cubic-bezier(0.2, 0, 0, 1);
+
+  /* Sliding Thumb / Knob */
+  .gh-switch-handle {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18), 0 0 1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    transition: left 0.25s cubic-bezier(0.2, 0, 0, 1),
+                background-color 0.25s cubic-bezier(0.2, 0, 0, 1),
+                transform 0.25s cubic-bezier(0.2, 0, 0, 1),
+                width 0.2s ease;
+  }
+
+  /* Inner track content (optional label or icon) */
+  .gh-switch-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-weight: 600;
+    line-height: 1;
+    pointer-events: none;
+    transition: margin 0.25s cubic-bezier(0.2, 0, 0, 1),
+                opacity 0.2s ease;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  /* Focus visible accessibility */
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(250, 140, 22, 0.35);
+  }
+}

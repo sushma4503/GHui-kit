@@ -1,0 +1,90 @@
+/* ==========================================================================
+   Typography Body Styles - Separate SCSS Code
+   Class Prefix: gh-
+   ========================================================================== */
+
+.gh-text-primary {
+  color: #1e293b;
+  font-weight: 400;
+}
+
+.gh-text-secondary {
+  color: #64748b;
+  font-weight: 400;
+}
+
+.gh-spec-button-text {
+  color: #ffaa23;
+  font-weight: 500;
+  cursor: pointer;
+
+  &:hover {
+    color: #ff9800;
+  }
+}
+
+.gh-spec-editable-text {
+  color: #1e293b;
+  border-bottom: 1px dashed #cbd5e1;
+  padding-bottom: 1px;
+  outline: none;
+  cursor: text;
+
+  &:focus {
+    border-bottom-color: #ffaa23;
+  }
+}
+
+.gh-text-danger {
+  color: #ef4444;
+}
+
+.gh-text-disabled {
+  color: #cbd5e1;
+}
+
+.gh-text-warning {
+  color: #f59e0b;
+}
+
+.gh-text-mark {
+  background-color: #fef08a;
+  color: #854d0e;
+  padding: 1px 4px;
+  border-radius: 2px;
+}
+
+.gh-text-strong {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.gh-text-underline {
+  text-decoration: underline;
+  color: #334155;
+}
+
+.gh-text-strikethrough {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+.gh-text-italic {
+  font-style: italic;
+  color: #334155;
+}
+
+.gh-text-code {
+  font-family: 'JetBrains Mono', monospace;
+  background-color: #f1f5f9;
+  color: #0f172a;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 13px;
+  border: 1px solid #e2e8f0;
+}
+
+.gh-text-footnote {
+  font-size: 12px;
+  color: #94a3b8;
+}
